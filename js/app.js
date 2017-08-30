@@ -1,9 +1,15 @@
-import ReactDOM from 'react-dom';
-import React from 'react';
+import React from 'react'
+import { render } from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './reducers'
+import AppContainer from './AppContainer.jsx'
 
-ReactDOM.render(
-  <div>
-    <h1 className="pageTitle">Assignment</h1>
-  </div>,
+const store = createStore(reducer)
+
+render(
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>,
   document.getElementById('container')
-);
+)
