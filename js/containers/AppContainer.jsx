@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PanelContainer from './PanelContainer.jsx'
-import {setSelected} from './actions'
+import * as actionItems from '../actions'
+import Navigation from '../components/Navigation.jsx'
 
 const AppContainer = ({items, actions}) => (
-  <div>
+  <div className='container'>
+    <Navigation />
     <PanelContainer items={items} actions={actions} />
   </div>
 )
@@ -16,7 +18,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(setSelected, dispatch)
+  actions: bindActionCreators(actionItems, dispatch)
 })
 
 export default connect(

@@ -4,7 +4,8 @@ export const editItems = (id, text) => ({
   text 
 })
 
-export const setSelected = (id) => ({
-  type: 'SET_SELECTED',
-  id
+export const setSelected = (id, text) => ({ 
+  type: 'SET_SELECTED', 
+  id, 
+  text 
 })
